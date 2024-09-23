@@ -1,0 +1,69 @@
+.article-tw-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.article-tw-header{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.article-tw-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 1000%;
+}
+
+.article-tw-div-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.article-tw-div-info-span{
+    opacity: 0.6;
+}
+
+.article-tw-card-button{
+    font-weight: bold;
+    color: black;
+    background-color: #fff;
+    margin-left: 12px;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 16px;
+    transition : background-color 0.4s;
+}
+.article-tw-card-button:hover{
+    background-color: #d4d4d4;
+}
+
+.article-tw-card-button-textNormal{
+    display: block;
+}
+.article-tw-card-button-stop-following{
+    display: none;
+}
+
+.article-tw-card-button.is-following{
+    border : 1px solid #7c7c7c;
+    background-color: transparent;
+    color: #ffffff;
+    width: 100px;
+    transition: background-color 0.3s;
+}
+.article-tw-card-button.is-following:hover{
+    background-color: #9746465c;
+    border: 1px solid #761f1f;
+    color: red;
+}
+.article-tw-card-button.is-following:hover .article-tw-card-button-textNormal{
+    display: none;
+}
+
+.article-tw-card-button.is-following:hover .article-tw-card-button-stop-following{
+    display: block;
+}
+
