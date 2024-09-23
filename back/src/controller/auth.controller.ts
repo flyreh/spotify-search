@@ -7,7 +7,15 @@ const service = new AuthService();
 
 const login = async (req: Request, res: Response) => {
 
-    res.send("HOLA");
+    try {
+        const authUrl = await service.getAuthUrl();
+
+        res.redirect(authUrl);
+
+    } catch (error) {
+
+        res.status(400).send({ message: "Error initiating authentication" });
+    }
 }
 
 const callback = async (req: Request, res: Response) => {
