@@ -16,7 +16,9 @@ class AuthService {
     async getAuthUrl() {
 
         const ClientID = process.env.CLIENT_ID;
-        const RedirectURI = process.env.REDIRECT_URI;
+        const RedirectURI = process.env.NODE_ENV === 'production'
+            ? process.env.REDIRECT_URI_PROD
+            : process.env.REDIRECT_URI_DEV;
 
         const scope = 'user-read-private user-read-email';
         const state = this.generateRandomString(16);
@@ -35,7 +37,9 @@ class AuthService {
 
         const Client_secret = process.env.CLIENT_SECRET;
         const ClientID = process.env.CLIENT_ID;
-        const RedirectURI = process.env.REDIRECT_URI;
+        const RedirectURI = process.env.NODE_ENV === 'production'
+            ? process.env.REDIRECT_URI_PROD
+            : process.env.REDIRECT_URI_DEV;
 
         const tokenUrl = 'https://accounts.spotify.com/api/token';
 
