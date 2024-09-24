@@ -12,13 +12,12 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Artist />} />
-          <Route path="/Recommendations" element={<Recommendations />} />
-          <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route index element={<Artist />} />
+          <Route path="Recommendations" element={<Recommendations />} />
+          <Route path="auth/callback" element={<AuthCallback />} />
         </Route>
       </Routes>
     </>
-
   );
 };
 
