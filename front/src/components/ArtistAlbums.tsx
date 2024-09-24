@@ -25,7 +25,7 @@ export const ArtistAlbums = ({ ArtistDetails }: ArtistAlbumsProps) => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:3030/api/ArtistAlbums?id=${id}`,
+        fetch(`https://spotify-search-api-seven.vercel.app/api/ArtistAlbums?id=${id}`,
             {
                 method: 'POST',
                 headers: {

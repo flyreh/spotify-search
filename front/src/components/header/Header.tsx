@@ -9,7 +9,7 @@ const Header = () => {
 
 
     const handleSignIn = () => {
-        window.location.href = 'http://localhost:3030/api/auth/login';
+        window.location.href = 'https://spotify-search-api-seven.vercel.app/api/auth/login';
     }
 
     return (

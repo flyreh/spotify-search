@@ -22,7 +22,7 @@ export const ArtistTopTrack = ({ id }: ArtistTopTrackProps) => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:3030/api/ArtistTopTracks?id=${id}`, {
+        fetch(`https://spotify-search-api-seven.vercel.app/api/ArtistTopTracks?id=${id}`, {
 
             method: 'POST',
             headers: {

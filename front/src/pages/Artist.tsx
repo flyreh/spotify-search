@@ -46,7 +46,7 @@ export default function Artist() {
         console.log(searchTerm);
 
         try {
-            const response = await fetch(`http://localhost:3030/api/ArtistSearch?query=${encodeURIComponent(searchTerm)}`, {
+            const response = await fetch(`https://spotify-search-api-seven.vercel.app/api/ArtistSearch?query=${encodeURIComponent(searchTerm)}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

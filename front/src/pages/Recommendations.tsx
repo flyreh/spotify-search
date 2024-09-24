@@ -58,7 +58,7 @@ const Recommendations = () => {
         console.log(searchSong);
 
         try {
-            const response = await fetch(`http://localhost:3030/api/Song?query=${encodeURIComponent(searchSong)}`, {
+            const response = await fetch(`https://spotify-search-api-seven.vercel.app/api/Song?query=${encodeURIComponent(searchSong)}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ const Recommendations = () => {
         const id = song.id;
 
         try {
-            const response = await fetch(`http://localhost:3030/api/Recommendations?id=${id}`, {
+            const response = await fetch(`https://spotify-search-api-seven.vercel.app/api/Recommendations?id=${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

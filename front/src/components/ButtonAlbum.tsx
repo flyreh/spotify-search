@@ -22,7 +22,7 @@ export const ButtonAlbum = ({ album }: ButtonAlbumProps) => {
 
         SetLoading(true);
 
-        fetch(`http://localhost:3030/api/AlbumSongs?id=${album.id}`,
+        fetch(`https://spotify-search-api-seven.vercel.app/api/AlbumSongs?id=${album.id}`,
             {
                 method: 'POST',
                 headers: {
