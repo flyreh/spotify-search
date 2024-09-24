@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const AuthCallback = () => {
+    const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
         // Extraer los tokens de la URL
-        const queryParams = new URLSearchParams(window.location.search);
+        const queryParams = new URLSearchParams(location.search);
         const accessToken = queryParams.get('access_token');
         const refreshToken = queryParams.get('refresh_token');
         const expiresIn = queryParams.get('expires_in');
@@ -24,12 +25,12 @@ const AuthCallback = () => {
             console.log('Tokens saved in localStorage ' + accessToken + " " + refreshToken + " " + expiresIn);
 
             // Redirigir a otra página o hacer lo que necesites
-            navigate('https://spotify-search-alpha.vercel.app/');
+            navigate('/');
         } else {
             // Manejar errores si los tokens no están presentes
             console.error('Tokens not found in URL');
         }
-    }, [navigate]);
+    }, [location, navigate]);
 
     return (
         <div>
