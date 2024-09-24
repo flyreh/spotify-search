@@ -44,7 +44,7 @@ const callback = async (req: Request, res: Response) => {
                 expires_in: tokenData.expires_in
             });
 
-            res.redirect(`http://localhost:5173/auth/callback?${queryParams}`);
+            res.redirect(`https://spotify-search-alpha.vercel.app/auth/callback?${queryParams}`);
         }
         //guardar el token en la sesión o DB
 
