@@ -15,7 +15,7 @@ const port = process.env.PORT || 3030;
 
 app.use(cors({
   origin: 'https://spotify-search-alpha.vercel.app', // Cambia esto al dominio correcto
-  credentials: true // Si necesitas enviar cookies o cabeceras de autorización
+  credentials: true
 }));
 
 

@@ -21,7 +21,7 @@ const getArtist = async (req = request, res = response) => {
         }
         if (typeof token !== 'string') {
 
-            return res.status(400).send({ message: "Invalid token" });
+            return res.status(400).send({ message: "Invalid token query parameter" });
         }
 
         const infoArtist = await service.getInfoByName(artist, token);
@@ -30,7 +30,7 @@ const getArtist = async (req = request, res = response) => {
 
     } catch (error) {
 
-        res.status(400).send({ message: "err" });
+        res.status(400).send({ message: "Type Error" });
     }
 
 }

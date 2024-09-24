@@ -13,7 +13,7 @@ class artistService {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            if (!response.ok) throw new Error('Error searching for artist');
+            if (!response.ok) throw new Error('Error in response ::: searching for artist');
 
             const data = await response.json();
 
@@ -24,7 +24,9 @@ class artistService {
             return data
 
         } catch (error) {
+
             console.log(error);
+
             throw error;
         }
     }
