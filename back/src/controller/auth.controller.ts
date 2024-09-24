@@ -68,7 +68,7 @@ const refreshToken = async (req: Request, res: Response) => {
             expires_in: newTokenData.expires_in
         });
 
-        res.redirect(`http://localhost:5173/auth/callback?${queryParams}`);
+        res.redirect(`https://spotify-search-alpha.vercel.app/auth/callback?${queryParams}`);
 
     } catch (error) {
 
