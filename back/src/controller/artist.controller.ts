@@ -26,6 +26,8 @@ const getArtist = async (req = request, res = response) => {
 
         const infoArtist = await service.getInfoByName(artist, token);
 
+        console.log(infoArtist);
+
         res.json(infoArtist);
 
     } catch (error) {
