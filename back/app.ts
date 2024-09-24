@@ -12,11 +12,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3030;
 
+const corsOptions = {
+  origin: 'https://spotify-search-alpha.vercel.app', // Cambia esto por tu origen permitido
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
+};
 
-app.use(cors({
-  origin: 'https://spotify-search-alpha.vercel.app', // Cambia esto al dominio correcto
-  credentials: true
-}));
+app.use(cors(corsOptions));
 
 
 app.use(express.json()); // Parsear cuerpos de solicitud en formato JSON
