@@ -43,7 +43,10 @@ export default function Artist() {
 
         setLoading(true);
 
-        console.log(searchTerm);
+        console.log(encodeURIComponent(searchTerm));
+
+        console.log(localStorage.getItem('access_token'));
+        console.log(JSON.stringify({ token: localStorage.getItem('access_token') }));
 
         try {
             const response = await fetch(`https://spotify-search-api-seven.vercel.app/api/ArtistSearch?query=${encodeURIComponent(searchTerm)}`, {
@@ -56,7 +59,7 @@ export default function Artist() {
 
             if (!response.ok) {
                 console.log(response);
-                throw new Error('Failed to fetch data');
+                throw new Error('Failed to fetch data, error en la respuesta');
             }
 
             const data = await response.json();
@@ -66,7 +69,7 @@ export default function Artist() {
             console.log(data.artists.items[0]);
 
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error fetching data, XDDDD:', error);
 
         } finally {
 
