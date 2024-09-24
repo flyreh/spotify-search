@@ -20,9 +20,6 @@ export const ModalSongsAlbum = ({ songs, onClose }: ModalSongsAlbumProps) => {
 
     const handlePlay = (previewUrl: string) => {
 
-        console.log("presionado");
-        console.log(previewUrl);
-
         if (audioRef.current) {
             audioRef.current.pause();
             audioRef.current.currentTime = 0;

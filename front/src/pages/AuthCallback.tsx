@@ -12,17 +12,11 @@ const AuthCallback = () => {
         const refreshToken = queryParams.get('refresh_token');
         const expiresIn = queryParams.get('expires_in');
 
-        console.log('Access Token:', accessToken);
-        console.log('Refresh Token:', refreshToken);
-        console.log('Expires In:', expiresIn);
-
         if (accessToken && refreshToken) {
             // Guardar tokens en localStorage
             localStorage.setItem('access_token', accessToken);
             localStorage.setItem('refresh_token', refreshToken);
             localStorage.setItem('expires_in', expiresIn || '');
-
-            console.log('Tokens saved in localStorage ' + accessToken + " " + refreshToken + " " + expiresIn);
 
             // Redirigir a otra página o hacer lo que necesites
             navigate('/');

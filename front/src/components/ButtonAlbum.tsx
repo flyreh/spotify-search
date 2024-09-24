@@ -12,15 +12,11 @@ interface ButtonAlbumProps {
 export const ButtonAlbum = ({ album }: ButtonAlbumProps) => {
 
     const [Songs, SetSongs] = useState(null);
-    const [loading, SetLoading] = useState(false);
 
     const [ModalOpen, SetModalOpen] = useState(false);
 
     const OpenModal = () => {
 
-        console.log(loading);
-
-        SetLoading(true);
 
         fetch(`https://spotify-search-api-seven.vercel.app/api/AlbumSongs?id=${album.id}`,
             {
@@ -41,7 +37,6 @@ export const ButtonAlbum = ({ album }: ButtonAlbumProps) => {
                 console.error('Error fetching albums:', error);
             });
 
-        SetLoading(false);
     }
 
     return (

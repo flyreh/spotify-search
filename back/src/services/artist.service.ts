@@ -13,7 +13,12 @@ class artistService {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            if (!response.ok) throw new Error('Error in response ::: searching for artist');
+
+            if (!response.ok) {
+                const errorBody = await response.json(); // Captura el cuerpo del error
+                console.log('Error response body:', errorBody);
+                throw new Error('Error in response ::: searching for artist');
+            }
 
             const data = await response.json();
 

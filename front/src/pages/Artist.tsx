@@ -43,10 +43,6 @@ export default function Artist() {
 
         setLoading(true);
 
-        console.log(encodeURIComponent(searchTerm));
-
-        console.log(localStorage.getItem('access_token'));
-        console.log(JSON.stringify({ token: localStorage.getItem('access_token') }));
 
         try {
             const response = await fetch(`https://spotify-search-api-seven.vercel.app/api/ArtistSearch?query=${encodeURIComponent(searchTerm)}`, {
