@@ -24,7 +24,7 @@ const AuthCallback = () => {
             console.log('Tokens saved in localStorage ' + accessToken + " " + refreshToken + " " + expiresIn);
 
             // Redirigir a otra página o hacer lo que necesites
-            navigate('/');
+            navigate('https://spotify-search-alpha.vercel.app/');
         } else {
             // Manejar errores si los tokens no están presentes
             console.error('Tokens not found in URL');
